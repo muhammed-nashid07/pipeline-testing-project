@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: pipeline-testing-project
-          image: 8089278330/pipeline-testing-project:latest
+          image: muhammednashid/pipeline-testing-project:3
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
