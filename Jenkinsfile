@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_CREDENTIALS_ID = 'docker-cred'
-        DOCKER_IMAGE          = 'muhammednashid/fast-api-chatbot'
+        DOCKER_IMAGE          = 'muhammednashid/pipeline-testing-project'
         SONAR_SERVER_NAME     = 'sonarqube-env' 
         SONAR_SCANNER_TOOL    = 'sonar-scanner'     
         GIT_CREDENTIALS_ID    = 'github-cred'
@@ -59,7 +59,7 @@ pipeline {
                             git remote set-url origin https://\${GH_USER}:\${GH_TOKEN}@github.com/muhammed-nashid07/pipeline-testing-project.git
                             git pull --rebase origin ${MANIFEST_BRANCH}
                             
-                            sed -i '/name: fast-api-chatbot/{n;s|image:.*|image: ${DOCKER_IMAGE}:${env.BUILD_NUMBER}|}' k8s/Deployment.yaml
+                            sed -i '/name: pipeline-testing-project/{n;s|image:.*|image: ${DOCKER_IMAGE}:${env.BUILD_NUMBER}|}' k8s/Deployment.yaml
                             
                             git config user.name "muhammed-nashid07"
                             git config user.email "muhammadnashid25@gmail.com"
