@@ -27,7 +27,7 @@ pipeline {
                             -Dsonar.projectKey=pipeline-testing-project-key \
                             -Dsonar.projectName='pipeline-testing-project-project' \
                             -Dsonar.sources=. \
-                            -Dsonar.exclusions=**/venv/**,**/.venv/**,**/_pycache_/**,**/.pytest_cache/**,**/static/**
+                            -Dsonar.exclusions=*/venv/,/.venv/,/_pycache_/,/.pytest_cache/,/static/*"
                     }
                 }
             }
